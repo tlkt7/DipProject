@@ -85,7 +85,7 @@ export default function MetricsPage({ data, onUpload }) {
     try {
       const form = new FormData()
       form.append('file', file)
-      const res = await axios.post('http://127.0.0.1:8000/predict', form)
+      const res = await axios.post('https://dipproject-production.up.railway.app/predict', form)
       onUpload(res.data)
     } catch (e) {
       alert('Error: ' + e.message)
