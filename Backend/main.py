@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import io
 from dotenv import load_dotenv
+from huggingface_hub import hf_hub_download
 
 load_dotenv()
 
@@ -32,7 +33,8 @@ PHASE_DISPLAY = {'Fertility': 'Ovulation', 'Luteal': 'Luteal', 'Menstrual': 'Men
 SEQ_LEN = 10
 
 model = CycleLSTM()
-model.load_state_dict(torch.load('../ML Model/models/lstm_cycle.pt', map_location='cpu'))
+model_path = hf_hub_download(repo_id="ibra0220/cycle-lstm", filename="lstm_cycle.pt")
+model.load_state_dict(torch.load(model_path, map_location='cpu'))
 model.eval()
 
 # ── App ───────────────────────────────────────────────────────────────────────

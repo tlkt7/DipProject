@@ -4,3 +4,5 @@ python-dotenv
 torch
 numpy
 pandas
+python-multipart
+huggingface_hub
