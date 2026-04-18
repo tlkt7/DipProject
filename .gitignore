@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+dist/
+*.ipynb_checkpoints/
+ML Model/.venv/
+ML Model/data/raw/
